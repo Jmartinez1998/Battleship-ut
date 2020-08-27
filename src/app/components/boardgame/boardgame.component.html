@@ -1,1 +1,51 @@
-<p>boardgame works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NodeBattleship</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <div class="row vertical-center-row">
+        <div class="col-md-12">
+            <!-- Game -->
+            <div id="game" >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Battleship Game #<span id="game-number"></span></div>
+                            <div class="panel-body">
+
+                                <!-- Player grids -->
+                                <div class="row">
+                                    <div class="col-md-6 player-grid text-center">
+                                        <h3>You</h3>
+                                        <canvas id="canvas-grid1" width="361" height="361">Browser does not support canvas.</canvas>
+                                    </div>
+                                    <div class="col-md-6 player-grid text-center">
+                                        <h3>Opponent</h3>
+                                        <canvas id="canvas-grid2" width="361" height="361">Browser does not support canvas.</canvas>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+
+                            <ul class="list-group">
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

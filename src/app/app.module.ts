@@ -8,6 +8,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { BoardgameComponent } from './components/boardgame/boardgame.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+//Inicio servicios
+import { ChargescriptsService } from './chargescripts.service';
+//End services
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    ChargescriptsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
