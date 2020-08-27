@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import Ws from '@adonisjs/websocket-client'
+import { ActivatedRoute, Router } from '@angular/router';
+//import Ws from '@adonisjs/websocket-client';
 
+const ws = Ws('ws://192.168.100.10:3333', { path:'adonis-ws' })
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    ws.connect()
+    ws.on('open', () => {
+      const random = ws.subscribe('test')
+      random.on('ready',() => {
+        random.on('new:game', (data) => {
+          alert('Iniciando partida!')
+          this.router.navigate(['/game/dashboard'])
+        })
+      })
+    })
   }
-
 }
